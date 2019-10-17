@@ -12,7 +12,9 @@ function findFriends(){
 
 function add(friend){
   return db('friends')
-  .insert(friend)
+  .insert(friend).then(ids =>{
+    return db('friends').where({id: ids[0]}).first()
+  })
 }
 
 function remove(id){
