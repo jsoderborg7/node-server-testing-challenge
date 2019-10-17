@@ -12,8 +12,4 @@ server.use(express.json());
 
 server.use('/api/friends', FriendRouter);
 
-server.get('/', (req, res) =>{
-  res.send("server is connected!")
-})
-
 module.exports = server;
